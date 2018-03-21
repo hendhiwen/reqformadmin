@@ -1,0 +1,49 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" data-color="red">
+                    <div class="header" >
+                        <h4 class="title">Tasks</h4>
+                        <p class="category">Users need your help, My Brother</p>
+                    </div>
+                    <div class="content">
+                        <div class="table-full-width">
+                            <table class="table" *ngIf="listRequest != null">
+                                <tbody>
+                                    <tr *ngFor="let req of listRequest" class="{{ selectedRequestId == req?.requestId ? 'selected-row' : ''}}">
+                                        <td><small>{{req?.createdBy}}, {{req?.createdDept}}, {{req?.reqDate}}</small><br>{{req?.subject}}<p>{{req?.desc}}</p></td>
+                                        <td class="td-actions text-right">
+                                            <button type="button" rel="tooltip" title="Complete Task" class="btn btn-info btn-simple btn-small" (click)="doResolve(req?.requestId)">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <!--button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-small">
+                                                <i class="fa fa-times"></i>
+                                            </button -->
+                                        </td>
+                                    </tr>                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row hide">
+            <div class="col-md-6">
+                <lbd-chart
+                  [title]="'2014 Sales'"
+                  [subtitle]="'All products including Taxes'"
+                  [chartType]="activityChartType"
+                  [chartData]="activityChartData"
+                  [chartOptions]="activityChartOptions"
+                  [chartResponsive]="activityChartResponsive"
+                  [legendItems]="activityChartLegendItems"
+                  [withHr]="true"
+                  [footerIconClass]="'fa fa-check'"
+                  [footerText]="'Data information certified'">
+                </lbd-chart>
+            </div>
+        </div>
+    </div>
+</div>

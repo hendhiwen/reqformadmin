@@ -1,0 +1,29 @@
+.table p{
+    font-size: 14px;
+}
+
+.card .header{
+    background-color:#3f51b5;
+}
+
+.card .title{
+    color:#fff;
+}
+.card .category{
+    color:#f1f8e9;
+}
+
+.dialog-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-space {
+    /* This fills the remaining space, by using flexbox. 
+    Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+
+.selected-row{
+    background-color: #80D8FF;
+}
